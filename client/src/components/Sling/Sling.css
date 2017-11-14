@@ -1,0 +1,34 @@
+.CodeMirror,
+.stdout {
+  font-family: "Operator Mono", Menlo, Monaco, "Lucida Console", monospace; }
+
+.sling-container {
+  display: grid;
+  height: 100%;
+  grid-template-areas: "header" "code" "stdout"; }
+  @media (min-width: 768px) {
+    .sling-container {
+      grid-template-columns: 50% 50%;
+      grid-template-areas: "header header" "code   stdout"; } }
+
+.code-editor-container {
+  max-height: 100%;
+  background: #FFF;
+  overflow-y: scroll;
+  cursor: text;
+  grid-area: code; }
+
+.stdout-container {
+  grid-area: stdout; }
+
+.editor-header {
+  grid-area: header; }
+
+.run-btn {
+  margin: 30px; }
+
+.stdout {
+  min-height: 100px;
+  background: #141414;
+  padding: 5px;
+  margin: 0 30px; }
