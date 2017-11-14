@@ -10,7 +10,7 @@ import EditorHeader from './EditorHeader';
 import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/base16-dark.css';
-import './Sling.css';
+import './Sling.scss';
 
 class Sling extends Component {
   state = {
@@ -47,7 +47,7 @@ class Sling extends Component {
 
     window.addEventListener('resize', this.setEditorSize);
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.setEditorSize);
   }
@@ -90,7 +90,7 @@ class Sling extends Component {
             color="white"
             onClick={this.runCode}
           />
-          <StdOut 
+          <StdOut
             text={this.state.stdout}
           />
         </div>

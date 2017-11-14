@@ -5,13 +5,13 @@ import debug from '../../lib/debug';
 import Button from '../globals/Button';
 import Logo from '../globals/Logo';
 
-import '../LandingPage/LandingPage.css';
+import '../LandingPage/LandingPage.scss';
 
 
 class InvalidSlingError extends Component {
   state = { }
   //
-  // either have this function in redux 
+  // either have this function in redux
   // or pass this function around through the props so we don't have to write this again
 
   fetchSlingId = async () => {

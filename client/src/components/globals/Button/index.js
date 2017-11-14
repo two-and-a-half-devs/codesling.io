@@ -2,7 +2,7 @@ import React from 'react';
 
 import Loading from '../Loading';
 
-import './Button.css';
+import './Button.scss';
 
 const Button = ({
   loading,
@@ -24,7 +24,7 @@ const Button = ({
 
   return (
     <div className={`button-container ${className ? className : ''}`}>
-      <button 
+      <button
         id={id}
         className={`${color}-text palette-${backgroundColor} ${!text ? 'no-text' : ''}`}
         onClick={onClick}

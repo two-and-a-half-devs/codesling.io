@@ -5,7 +5,7 @@ import debug from '../../lib/debug';
 import Button from '../globals/Button';
 import Logo from '../globals/Logo';
 
-import '../LandingPage/LandingPage.css';
+import '../LandingPage/LandingPage.scss';
 
 class LandingPage extends Component {
   state = {

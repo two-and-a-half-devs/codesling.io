@@ -3,7 +3,7 @@ import Logo from '../../globals/Logo';
 
 import EditorNavbar from './EditorNavbar';
 
-import './EditorHeader.css';
+import './EditorHeader.scss';
 
 const EditorHeader = () => (
   <div className="editor-header">
