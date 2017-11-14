@@ -1,0 +1,257 @@
+body {
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4; }
+
+h1 {
+  font-size: 2rem; }
+
+h2 {
+  font-size: 1.6rem; }
+
+h3 {
+  font-size: 1.4rem; }
+
+h4 {
+  font-size: 1.3rem; }
+
+h5 {
+  font-size: 1.2rem; }
+
+h6 {
+  font-size: 1rem; }
+
+p {
+  font-size: 1rem; }
+
+button {
+  font-size: 1rem; }
+
+code {
+  font-size: 0.8rem; }
+
+input {
+  font-size: 1rem; }
+
+li {
+  font-size: 1rem; }
+
+@media (min-width: 480px) {
+  h1 {
+    font-size: 2.5rem; }
+  h2 {
+    font-size: 2rem; }
+  h3 {
+    font-size: 1.8rem; }
+  h4 {
+    font-size: 1.6rem; }
+  h5 {
+    font-size: 1.4rem; }
+  h6 {
+    font-size: 1rem; }
+  p {
+    font-size: 1rem; }
+  button {
+    font-size: 1rem; }
+  code {
+    font-size: 1rem; }
+  input {
+    font-size: 1rem; }
+  li {
+    font-size: 1rem; } }
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem; }
+  h2 {
+    font-size: 2.4rem; }
+  h3 {
+    font-size: 2.1rem; }
+  h4 {
+    font-size: 1.8rem; }
+  h5 {
+    font-size: 1.5rem; }
+  h6 {
+    font-size: 1rem; }
+  p {
+    font-size: 1rem; }
+  button {
+    font-size: 1rem; }
+  code {
+    font-size: 0.9rem; }
+  input {
+    font-size: 1rem; }
+  li {
+    font-size: 1rem; } }
+
+.palette-white {
+  background-color: #FFF; }
+  .palette-white:hover {
+    background-color: white; }
+  .palette-white:active {
+    background-color: #e6e6e6; }
+
+button.palette-white {
+  box-shadow: 0px 3px 0px #ededed; }
+  button.palette-white:hover {
+    box-shadow: 0px 3px 0px #FFF; }
+  button.palette-white:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #FFF; }
+
+.white-text {
+  color: #FFF; }
+
+.palette-gray {
+  background-color: #d3d3d3; }
+  .palette-gray:hover {
+    background-color: #ededed; }
+  .palette-gray:active {
+    background-color: #bababa; }
+
+button.palette-gray {
+  box-shadow: 0px 3px 0px #c1c1c1; }
+  button.palette-gray:hover {
+    box-shadow: 0px 3px 0px #d3d3d3; }
+  button.palette-gray:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #d3d3d3; }
+
+.gray-text {
+  color: #d3d3d3; }
+
+.palette-darkgray {
+  background-color: #262626; }
+  .palette-darkgray:hover {
+    background-color: #404040; }
+  .palette-darkgray:active {
+    background-color: #0d0d0d; }
+
+button.palette-darkgray {
+  box-shadow: 0px 3px 0px #141414; }
+  button.palette-darkgray:hover {
+    box-shadow: 0px 3px 0px #262626; }
+  button.palette-darkgray:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #262626; }
+
+.darkgray-text {
+  color: #262626; }
+
+.palette-lightblue {
+  background-color: #e8edf2; }
+  .palette-lightblue:hover {
+    background-color: white; }
+  .palette-lightblue:active {
+    background-color: #c7d4e0; }
+
+button.palette-lightblue {
+  box-shadow: 0px 3px 0px #d1dbe5; }
+  button.palette-lightblue:hover {
+    box-shadow: 0px 3px 0px #e8edf2; }
+  button.palette-lightblue:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #e8edf2; }
+
+.lightblue-text {
+  color: #e8edf2; }
+
+.palette-blue {
+  background-color: #155b92; }
+  .palette-blue:hover {
+    background-color: #1b77bf; }
+  .palette-blue:active {
+    background-color: #0f3f65; }
+
+button.palette-blue {
+  box-shadow: 0px 3px 0px #114873; }
+  button.palette-blue:hover {
+    box-shadow: 0px 3px 0px #155b92; }
+  button.palette-blue:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #155b92; }
+
+.blue-text {
+  color: #155b92; }
+
+.palette-brown {
+  background-color: #b3985c; }
+  .palette-brown:hover {
+    background-color: #c3ae7f; }
+  .palette-brown:active {
+    background-color: #967d46; }
+
+button.palette-brown {
+  box-shadow: 0px 3px 0px #a0864b; }
+  button.palette-brown:hover {
+    box-shadow: 0px 3px 0px #b3985c; }
+  button.palette-brown:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #b3985c; }
+
+.brown-text {
+  color: #b3985c; }
+
+.palette-red {
+  background-color: #c24040; }
+  .palette-red:hover {
+    background-color: #ce6767; }
+  .palette-red:active {
+    background-color: #9d3232; }
+
+button.palette-red {
+  box-shadow: 0px 3px 0px #a83636; }
+  button.palette-red:hover {
+    box-shadow: 0px 3px 0px #c24040; }
+  button.palette-red:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #c24040; }
+
+.red-text {
+  color: #c24040; }
+
+.palette-green {
+  background-color: #4e9450; }
+  .palette-green:hover {
+    background-color: #66af68; }
+  .palette-green:active {
+    background-color: #3c733e; }
+
+button.palette-green {
+  box-shadow: 0px 3px 0px #427d43; }
+  button.palette-green:hover {
+    box-shadow: 0px 3px 0px #4e9450; }
+  button.palette-green:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0px -3px 0px #4e9450; }
+
+.green-text {
+  color: #4e9450; }
+
+a {
+  color: #c24040; }
+  a:hover {
+    color: #db8d8d; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+#root, .app {
+  height: 100%; }
+
+body {
+  background-color: #262626;
+  color: #FFF; }

@@ -1,0 +1,12 @@
+.landing-page-container {
+  text-align: center; }
+
+.landing-page-logo {
+  width: 300px;
+  margin: 50px 0; }
+
+.auth-btn-container button {
+  margin-bottom: 20px; }
+  @media (min-width: 480px) {
+    .auth-btn-container button {
+      min-width: 300px; } }
