@@ -47,7 +47,7 @@ class Sling extends Component {
 
     window.addEventListener('resize', this.setEditorSize);
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.setEditorSize);
   }
@@ -90,7 +90,7 @@ class Sling extends Component {
             color="white"
             onClick={this.runCode}
           />
-          <StdOut 
+          <StdOut
             text={this.state.stdout}
           />
         </div>

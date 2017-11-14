@@ -20,7 +20,7 @@ class Signup extends Component {
 
   handleSignupSubmit = async (e) => {
     e.preventDefault();
-    const { 
+    const {
       username,
       password,
     } = this.state;
@@ -36,7 +36,7 @@ class Signup extends Component {
   render() {
     return (
       <div className="signup-form-container">
-        <form 
+        <form
           className="auth-form"
           onSubmit={this.handleSignupSubmit}
         >

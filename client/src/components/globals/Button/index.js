@@ -24,7 +24,7 @@ const Button = ({
 
   return (
     <div className={`button-container ${className ? className : ''}`}>
-      <button 
+      <button
         id={id}
         className={`${color}-text palette-${backgroundColor} ${!text ? 'no-text' : ''}`}
         onClick={onClick}

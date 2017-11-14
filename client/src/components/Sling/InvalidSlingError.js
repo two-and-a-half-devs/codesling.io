@@ -11,7 +11,7 @@ import '../LandingPage/LandingPage.css';
 class InvalidSlingError extends Component {
   state = { }
   //
-  // either have this function in redux 
+  // either have this function in redux
   // or pass this function around through the props so we don't have to write this again
 
   fetchSlingId = async () => {
