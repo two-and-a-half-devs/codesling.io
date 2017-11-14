@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Input.scss';
+import './Input.css';
 
 const Input = ({
   type,

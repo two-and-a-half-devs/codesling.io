@@ -5,7 +5,7 @@ import debug from '../../lib/debug';
 import Button from '../globals/Button';
 import Logo from '../globals/Logo';
 
-import '../LandingPage/LandingPage.scss';
+import '../LandingPage/LandingPage.css';
 
 
 class InvalidSlingError extends Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Loading.scss';
+import './Loading.css';
 
 const Loading = ({ color }) => {
   let cssStyles = {

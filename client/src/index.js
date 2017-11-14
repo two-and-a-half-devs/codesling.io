@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './index.scss';
+import './index.css';
 
 render((
   <BrowserRouter>
