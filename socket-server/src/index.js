@@ -19,6 +19,11 @@ io.on('connection', (client) => {
   each(clientEvents, (handler, event) => {
     client.on(event, handler.bind(null, { io, client, room }));
   });
+
+  client.on('chat message', function(msg){
+    console.log(msg)
+    io.emit('chat message', msg);
+  });
 });
 
 const port = process.env.PORT || 4155;
