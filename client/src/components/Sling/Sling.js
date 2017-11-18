@@ -47,9 +47,14 @@ class Sling extends Component {
 
     this.socket.on('server.message', (incomingMessages) => {
       if (incomingMessages.message) {
-      let message = incomingMessages.username +": "+ incomingMessages.message;
+        let sender = incomingMessages.username;
+        if (incomingMessages.username === this.state.username) {
+          sender = 'me';
+        }
+      let message = sender +": "+ incomingMessages.message;
       let updatedMessages = this.state.messages;
-      updatedMessages.push(message);
+
+      updatedMessages.unshift(message);
       console.log(updatedMessages);
       this.setState({
         messages: updatedMessages
@@ -138,7 +143,7 @@ class Sling extends Component {
           />
         </div>
         <div className="chats-container">
-          <input id="msg" placeholder="enter a chat"></input>
+          <input id="msg" placeholder="Enter message"></input>
             <br></br><br></br>
             <Button
               id="send-button"
@@ -147,8 +152,10 @@ class Sling extends Component {
               color="white"
               onClick={this.sendMessage}
             />
-          <br></br>
-          <div>{this.state.users}</div>
+          <div>
+            <h6>Users Connected:{this.state.users.map((user) => " " + user + " ")}
+            </h6>
+          </div>
           <div className="messages">
             <ul id="messages">
               {this.state.messages.map((message) => <li>{message}</li>)}

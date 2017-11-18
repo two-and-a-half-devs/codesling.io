@@ -34,12 +34,19 @@
   margin: 0 30px; }
 
 .chats-container {
+  background-color: #262626;
   padding: 20px;
   text-align: center;
 }
 
 .messages {
+  border-radius: 15px;
+  background-color: white;
   text-align: left;
+}
+
+#msg {
+  border-radius: 5px;
 }
 
 #messages {
@@ -53,5 +60,6 @@
 }
 
 #messages li {
+  color: black;
   padding: 5px 10px;
 }
