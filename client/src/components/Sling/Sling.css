@@ -41,3 +41,17 @@
 .messages {
   text-align: left;
 }
+
+#messages {
+  height:200px;
+  width: auto;
+  overflow:hidden;
+  overflow-y:scroll;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages li {
+  padding: 5px 10px;
+}

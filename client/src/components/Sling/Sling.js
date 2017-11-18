@@ -19,7 +19,8 @@ class Sling extends Component {
     text: '',
     stdout: '',
     username: jwtDecode(localStorage.token).username,
-    messages: []
+    messages: [],
+    users: []
   }
 
   runCode = () => {
@@ -45,17 +46,34 @@ class Sling extends Component {
     });
 
     this.socket.on('server.message', (incomingMessages) => {
+      if (incomingMessages.message) {
       let message = incomingMessages.username +": "+ incomingMessages.message;
       let updatedMessages = this.state.messages;
       updatedMessages.push(message);
-      console.log(updatedMessages, incomingMessages);
+      console.log(updatedMessages);
       this.setState({
         messages: updatedMessages
-      })
-
+        })
+      }
     });
+
+    this.socket.on('server.message', (data) => {
+      let user = data.username;
+      let updatedUsers = this.state.users;
+      if (!updatedUsers.includes(user)) {
+        updatedUsers.push(user);
+      }
+      console.log(updatedUsers);
+      this.setState({
+        users: updatedUsers
+        })
+    });
+
     this.socket.on('connect', () => {
       this.socket.emit('client.ready');
+      this.socket.emit('client.message', {
+        username: this.state.username
+      });
     });
 
     this.socket.on('server.initialState', ({ id, text }) => {
@@ -130,15 +148,11 @@ class Sling extends Component {
               onClick={this.sendMessage}
             />
           <br></br>
+          <div>{this.state.users}</div>
           <div className="messages">
-            <CodeMirror
-              value={this.state.messages.map((message) => message).join('\n')}
-              options={{
-                mode: 'plaintext',
-                lineNumbers: false,
-                theme: 'base16-dark',
-              }}
-              />
+            <ul id="messages">
+              {this.state.messages.map((message) => <li>{message}</li>)}
+            </ul>
           </div>
         </div>
       </div>
