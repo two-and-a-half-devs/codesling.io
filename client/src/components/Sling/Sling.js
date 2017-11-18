@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror2';
 import io from 'socket.io-client/dist/socket.io.js';
-import { throttle, map } from 'lodash';
+import { throttle } from 'lodash';
 import $ from 'jquery'
 
 import Button from '../globals/Button';
