@@ -1,7 +1,7 @@
 language: node_js
 node_js: node
 services: mongodb
-install: 
+install:
   - yarn
   - yarn setup:client
   - yarn setup:rest-server
@@ -15,3 +15,4 @@ script:
   - yarn start:server &
   - sleep 10
   - yarn test
+  - yarn seed
