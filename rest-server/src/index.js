@@ -20,4 +20,8 @@ app.use(express.static(path.resolve(__dirname, '../../client/build')));
 
 app.use('/api', router);
 
+app.use('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../../client/build/index.html'));
+});
+
 app.listen(port, () => log(`rest-server listening on port ${port}`));
