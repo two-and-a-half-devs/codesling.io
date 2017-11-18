@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror2';
 import io from 'socket.io-client/dist/socket.io.js';
-import { throttle } from 'lodash';
+import { throttle, map } from 'lodash';
+import $ from 'jquery'
 
 import Button from '../globals/Button';
 import StdOut from './StdOut';
@@ -15,11 +16,35 @@ import './Sling.css';
 class Sling extends Component {
   state = {
     text: '',
-    stdout: ''
+    stdout: '',
+    username: '',
+    messages: []
   }
 
   runCode = () => {
     this.socket.emit('client.run');
+  }
+
+  sendMessage = () => {
+    let message = $('#msg').val();
+    // let messageArray = []
+    console.log('trying to send:', message);
+    this.socket.emit('client.message', {
+      message: message,
+      username: 'me'
+    });
+    $("#msg").val('');
+
+    this.socket.on('server.message', (incomingMessages) => {
+      let message = incomingMessages.message;
+      let updatedMessages = this.state.messages;
+      updatedMessages.push(message);
+      console.log(updatedMessages);
+      this.setState({
+        messages: updatedMessages
+      })
+
+    });
   }
 
   componentDidMount() {
@@ -93,6 +118,28 @@ class Sling extends Component {
           <StdOut
             text={this.state.stdout}
           />
+        </div>
+        <div className="chats-container">
+          <input id="msg" placeholder="enter a chat"></input>
+            <br></br><br></br>
+            <Button
+              id="send-button"
+              text="Send"
+              backgroundColor="blue"
+              color="white"
+              onClick={this.sendMessage}
+            />
+          <br></br>
+          <div className="messages">
+            <CodeMirror
+              value={this.state.messages.map((message) => message).join('\n')}
+              options={{
+                mode: 'plaintext',
+                lineNumbers: false,
+                theme: 'base16-dark',
+              }}
+              />
+          </div>
         </div>
       </div>
     );

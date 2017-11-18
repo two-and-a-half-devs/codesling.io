@@ -1,9 +1,11 @@
 import React from 'react';
+import jwtDecode from 'jwt-decode';
+
 
 const EditorNavbar = () => (
   <nav className="editor-navbar">
     <ul>
-      <li>Logout button here!</li>
+      <li id='username'>{jwtDecode(localStorage.token).username}</li>
       <li>Item 2</li>
       <li>Item 3</li>
     </ul>
