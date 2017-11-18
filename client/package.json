@@ -17,6 +17,7 @@
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.17",
+    "jquery": "^3.2.1",
     "react-test-renderer": "^16.0.0-alpha.12",
     "socket.io": "^2.0.3"
   },

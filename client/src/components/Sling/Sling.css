@@ -32,3 +32,12 @@
   background: #141414;
   padding: 5px;
   margin: 0 30px; }
+
+.chats-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.messages {
+  text-align: left;
+}
