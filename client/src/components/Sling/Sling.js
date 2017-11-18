@@ -11,13 +11,14 @@ import EditorHeader from './EditorHeader';
 import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/base16-dark.css';
+import jwtDecode from 'jwt-decode';
 import './Sling.css';
 
 class Sling extends Component {
   state = {
     text: '',
     stdout: '',
-    username: '',
+    username: jwtDecode(localStorage.token).username,
     messages: []
   }
 
@@ -27,24 +28,13 @@ class Sling extends Component {
 
   sendMessage = () => {
     let message = $('#msg').val();
-    // let messageArray = []
     console.log('trying to send:', message);
     this.socket.emit('client.message', {
       message: message,
-      username: 'me'
+      username: this.state.username
     });
     $("#msg").val('');
 
-    this.socket.on('server.message', (incomingMessages) => {
-      let message = incomingMessages.message;
-      let updatedMessages = this.state.messages;
-      updatedMessages.push(message);
-      console.log(updatedMessages);
-      this.setState({
-        messages: updatedMessages
-      })
-
-    });
   }
 
   componentDidMount() {
@@ -54,6 +44,16 @@ class Sling extends Component {
       }
     });
 
+    this.socket.on('server.message', (incomingMessages) => {
+      let message = incomingMessages.username +": "+ incomingMessages.message;
+      let updatedMessages = this.state.messages;
+      updatedMessages.push(message);
+      console.log(updatedMessages, incomingMessages);
+      this.setState({
+        messages: updatedMessages
+      })
+
+    });
     this.socket.on('connect', () => {
       this.socket.emit('client.ready');
     });
